@@ -1,0 +1,17 @@
+# Use the official Go image
+FROM golang:1.22
+
+# Set the working directory
+WORKDIR /app
+
+# Copy all files into the container
+COPY . .
+
+# Build the Go app
+RUN go build -o service1 main.go
+
+# Expose the port
+EXPOSE 8001
+
+# Run the app
+CMD ["./service1"]
